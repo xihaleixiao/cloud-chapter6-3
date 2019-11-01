@@ -7,21 +7,23 @@ import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
 /**
  * @author xhlx
- * @date 2019/11/1 10:29
+ * @date 2019/11/1 11:05
  * @description
  **/
+@SpringBootApplication
+@EnableEurekaClient
+@EnableFeignClients
 @EnableHystrixDashboard
 @EnableHystrix
-@EnableEurekaClient
-@SpringBootApplication
-public class EurekaRibbonClientApplication {
+public class EurekaFeignClientApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EurekaRibbonClientApplication.class, args);
+        SpringApplication.run(EurekaFeignClientApplication.class, args);
     }
 
     @Bean
